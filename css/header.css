@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+header {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    width: 40%;
+    
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+
+}
+
+a:hover {
+    color: rgb(95, 21, 212);
+
+}
