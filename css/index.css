@@ -2,8 +2,3 @@ body{
     margin: 0;
     padding: 0;
 }
-
-iframe {
-    width: 100%;
-    border: none; /* remove a borda padrão */
-}
