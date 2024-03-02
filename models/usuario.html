@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- tag de responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/index.css">
+
+  <title>Clínica MedHealth</title>
+  <style src="../css/usuario.css"></style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Menu lateral -->
+    <div class="menu" id="menu">
+      <a href="#" onclick="mostrarConteudo('perfil')">Perfil</a>
+      <a href="#" onclick="mostrarConteudo('configuracoes')">Configurações</a>
+      <a href="#" onclick="mostrarConteudo('amigos')">Amigos</a>
+    </div>
+
+    <!-- Ícone de sanduíche para dispositivos móveis -->
+    <div class="sanduiche" onclick="toggleMenu()">
+      &#9776;
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="conteudo" id="conteudo">
+      <!-- O conteúdo será carregado dinamicamente aqui -->
+      Selecione uma opção no menu.
+    </div>
+  </div>
+
+  <script src="../scripts/usuario.js"></script>
+</body>
+
+</html>

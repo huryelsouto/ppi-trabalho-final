@@ -1,0 +1,73 @@
+/* Estilos gerais */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Estilos para o menu lateral */
+.menu {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    transition: width 0.3s;
+    overflow-y: auto;
+}
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+/* Estilos para o conteúdo principal */
+.conteudo {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Estilos para o ícone de sanduíche */
+.sanduiche {
+    display: none;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 60px;
+    }
+
+    .menu a {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .conteudo {
+        padding: 10px;
+    }
+
+    .sanduiche {
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu.expandido {
+        width: 250px;
+    }
+}
