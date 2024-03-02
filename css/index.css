@@ -6,7 +6,14 @@ body{
 }
 
 #conteiner-1{
-    background-color: rgb(183, 238, 252);
+    padding: 45px 0;
+
+    background-image: url('../images/healthcare-worker.jpg'); /* Caminho para sua imagem de fundo */
+    background-size: cover; /* Ajuste da imagem de fundo */
+    background-position: center; /* Posição da imagem de fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */   
+    
+
 }
 
 #text-1{
@@ -15,6 +22,8 @@ body{
     flex: 1;
     margin: auto;
     padding: 5px;
+    color: rgb(85, 85, 85);
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 
 h2{
@@ -26,51 +35,50 @@ p{
 
 
 #conteiner-2{
-    background-color: rgb(226, 224, 224);
+    background-color: whitesmoke;
     padding: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+    
 }
 
 .item{
     background-color: white;
     
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 20px;
     text-align: center;
-    flex: 1;
 
-    display: flex;
-
-    flex-direction: column;
-    justify-content: space-between;
-
-    max-width: 20%;
-    min-width: 20%;
+    max-width: 200px;
+    min-width: 120px;
 
     border: 2px solid rgb(209, 208, 208);
 }
 
-.item h2{
+.head h2{
     font-size: 15px;
-    margin-bottom: 0;
+    box-sizing: border-box;
 }
 
 #conteiner-2 img{
-    width: 30%;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 15px;
 }
 
 #conteiner-2 p{
-    margin: 6px 10px;
-}
-
-#conteiner-2 .head{
-    padding: 15px;
-    color: white;
+    margin: 10px 10px;
+    padding: 10px;
+    color: rgb(99, 98, 98);
 }
 
 .head{
     margin: 0;
-    padding: 0;
-    background-color: rgb(95, 21, 212);
+    padding: 15px;
+    color: white;
+    background-color: rgb(79, 174, 197);
+    
 }
