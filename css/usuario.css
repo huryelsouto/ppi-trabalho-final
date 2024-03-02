@@ -1,40 +1,62 @@
 /* Estilos gerais */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-.container {
-    display: flex;
+.usuario-container {
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
     height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Estilos para o menu lateral */
 .menu {
-    width: 250px;
-    background-color: #333;
-    color: #fff;
+    width: 300px;
+    background-color: #0480da;
+    color: white;
     transition: width 0.3s;
     overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .menu a {
     display: block;
     padding: 15px;
-    color: #fff;
+    color: white;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s;
 }
 
+#menu-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    flex: 1;
+}
+
+
 .menu a:hover {
-    background-color: #555;
+    background-color: #0765ba;
 }
 
 /* Estilos para o conteúdo principal */
-.conteudo {
+.conteudo-container {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
     flex: 1;
-    padding: 20px;
 }
 
 /* Estilos para o ícone de sanduíche */
@@ -42,32 +64,83 @@ body, html {
     display: none;
 }
 
+.div-desligar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    margin: 15px auto;
+}
+
+.div-desligar i {
+    margin-right: 10px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid white;
+}
+
+.perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.dados-usuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-usuario {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.tipo-usuario {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+
+
 /* Estilos responsivos */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
     .menu {
         width: 60px;
     }
 
     .menu a {
         padding: 10px;
-        text-align: center;
+        text-align: start;
     }
 
-    .conteudo {
-        padding: 10px;
-    }
 
     .sanduiche {
-        display: block;
+        display: flex;
+        justify-content: end;
         padding: 10px;
         cursor: pointer;
     }
 
+    #menu-content {
+        display: none;
+    }
+
     .menu.expandido {
-        width: 250px;
+        width: 300px;
+    }
+
+    #menu-content.expandido {
+        display: block;
     }
 }

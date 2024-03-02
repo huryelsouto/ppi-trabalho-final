@@ -8,30 +8,55 @@
   <link rel="stylesheet" href="../css/index.css">
 
   <title>Clínica MedHealth</title>
-  <style src="../css/usuario.css"></style>
+  <link rel="stylesheet" href="../css/usuario.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-  <div class="container">
+  <div class="usuario-container">
+    <!-- Ícone de sanduíche para dispositivos móveis -->
     <!-- Menu lateral -->
     <div class="menu" id="menu">
-      <a href="#" onclick="mostrarConteudo('perfil')">Perfil</a>
-      <a href="#" onclick="mostrarConteudo('configuracoes')">Configurações</a>
-      <a href="#" onclick="mostrarConteudo('amigos')">Amigos</a>
+      <div class="sanduiche" onclick="toggleMenu()">
+        <i class="material-symbols-outlined">menu</i>
+      </div>
+      <div class="menu-content" id="menu-content">
+        <div class="perfil">
+          <img src="../images/usuario.jpg" alt="Foto do Usuário">
+          <div class="dados-usuario">
+            <div class="nome-usuario">Nome do Usuário</div>
+            <div class="tipo-usuario">Tipo de Usuário</div>
+          </div>
+        </div>
+        <div id="menu-actions">
+          <div id="menu-itens">
+            <a href="#" class="menu-item" onclick="mostrarConteudo('perfil')">Perfil</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('agendamento-consultas')">Agendamento</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-funcionarios')">Cadastro de
+              funcionários</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-pacientes')">Cadastro de pacientes</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-funcionarios')">Listagem de
+              funcionários</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-pacientes')">Listagem de pacientes</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-enderecos')">Listagem de endereços</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-agendamentos')">Listagem de
+              agendamentos</a>
+            <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-agendamentos-funcionario')">Listagem de
+              agendamentos por funcionário</a>
+          </div>
+          <div class="div-desligar">
+            <i class=" material-symbols-outlined">power_settings_new</i>
+            <span>Sair</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Ícone de sanduíche para dispositivos móveis -->
-    <div class="sanduiche" onclick="toggleMenu()">
-      &#9776;
+    <div id="conteudo-container" class="conteudo-container">
     </div>
 
-    <!-- Conteúdo principal -->
-    <div class="conteudo" id="conteudo">
-      <!-- O conteúdo será carregado dinamicamente aqui -->
-      Selecione uma opção no menu.
-    </div>
   </div>
-
   <script src="../scripts/usuario.js"></script>
 </body>
 
