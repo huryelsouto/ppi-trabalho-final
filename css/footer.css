@@ -13,6 +13,7 @@ body {
 
 footer {
     color: #fff;
+    height: 150px;   
     text-align: center;
     position: absolute;
     bottom: 0;

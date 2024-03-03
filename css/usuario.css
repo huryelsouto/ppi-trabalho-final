@@ -14,22 +14,20 @@ html {
     height: 100vh;
 
     display: flex;
-    justify-content: space-between;
 }
 
 /* Estilos para o menu lateral */
-.menu {
+#menu {
     width: 300px;
     background-color: #0480da;
     color: white;
     transition: width 0.3s;
-    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
 }
 
-.menu a {
+#menu a {
     display: block;
     padding: 15px;
     color: white;
@@ -37,16 +35,19 @@ html {
     transition: background-color 0.5s;
 }
 
-#menu-actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+#menu-itens {
     flex: 1;
 }
 
+#menu-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+}
 
-.menu a:hover {
+#menu a:hover {
     background-color: #0765ba;
 }
 
@@ -69,11 +70,18 @@ html {
     align-items: center;
     justify-content: center;
 
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 5px;
     border-radius: 5px;
-    width: 50%;
+    width: 40%;
     margin: 15px auto;
+    background-color: #3d9ded;
+    border: 1px solid #3d9ded;
+    transition: border-color 0.5s;
+}
+
+.div-desligar:hover {
+    cursor: pointer;
+    border-color: white;
 }
 
 .div-desligar i {
@@ -115,11 +123,11 @@ html {
 
 /* Estilos responsivos */
 @media screen and (max-width: 768px) {
-    .menu {
+    #menu {
         width: 60px;
     }
 
-    .menu a {
+    #menu a {
         padding: 10px;
         text-align: start;
     }
@@ -136,11 +144,12 @@ html {
         display: none;
     }
 
-    .menu.expandido {
+    #menu.expandido {
         width: 300px;
     }
 
     #menu-content.expandido {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 }
