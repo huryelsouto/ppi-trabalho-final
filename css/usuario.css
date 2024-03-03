@@ -25,6 +25,8 @@ html {
     transition: width 0.3s;
     overflow-y: auto;
 
+    height: 100%;
+
     display: flex;
     flex-direction: column;
 }
@@ -37,14 +39,16 @@ html {
     transition: background-color 0.5s;
 }
 
-#menu-actions {
+#menu-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
 
-    flex: 1;
 }
 
+#menu-itens {
+    flex: 1;
+}
 
 .menu a:hover {
     background-color: #0765ba;
@@ -69,11 +73,18 @@ html {
     align-items: center;
     justify-content: center;
 
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 5px;
     border-radius: 5px;
-    width: 50%;
+    width: 40%;
     margin: 15px auto;
+    background-color: #3d9ded;
+    border: 1px solid #3d9ded;
+    transition: border-color 0.5s;
+}
+
+.div-desligar:hover {
+    cursor: pointer;
+    border-color: white;
 }
 
 .div-desligar i {
@@ -141,6 +152,9 @@ html {
     }
 
     #menu-content.expandido {
-        display: block;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        
     }
 }
