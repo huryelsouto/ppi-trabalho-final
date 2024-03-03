@@ -8,15 +8,11 @@ body {
 footer {
     background-color: rgb(79, 174, 197);
     color: #fff;
+
+    height: 150px;
     
     text-align: center;
 }
-/*
-.container {
-    margin: 0 auto;
-    padding: 0 20px;   
-}
-*/
 
 .footer-info {
     display: flex;
