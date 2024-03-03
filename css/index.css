@@ -8,7 +8,7 @@ body{
 #conteiner-1{
     padding: 45px 0;
 
-    background-image: url('../images/healthcare-worker.jpg'); /* Caminho para sua imagem de fundo */
+    background-image: url('../images/index-welcome2.jpg'); /* Caminho para sua imagem de fundo */
     background-size: cover; /* Ajuste da imagem de fundo */
     background-position: center; /* Posição da imagem de fundo */
     background-repeat: no-repeat; /* Evita repetição da imagem */   

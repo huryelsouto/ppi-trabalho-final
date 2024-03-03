@@ -11,17 +11,82 @@
 
 <body>
   <div class="container">
-    <form class="login-form">
-      <h2>Login</h2>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="password">Senha:</label>
-      <input type="password" id="password" name="password" required>
-      <button type="submit">Entrar</button>
-      <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
-      <p><a href="index.html">Voltar ao ínicio</a></p>
-    </form>
-  </div>
-</body>
+      <form class="form" >
+        <div class="head">
+          <button type="button" data-tabname="login">Login</button>
+          <button type="button" data-tabname="cadastro">Sign Up</button>
+        </div>
+
+        <div class="infoLogin" data-tabname="login">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password">
+
+          <div class="send">
+            <button type="submit">Entrar</button>
+            <p><a href="index.html">Voltar ao ínicio</a></p>
+          </div>
+        </div>
+
+        <div class="infoCad" data-tabname="cadastro">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name">
   
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+  
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password">
+  
+          <div class="send">
+            <button type="submit">Registrar</button>
+            <p><a href="index.html">Voltar ao ínicio</a></p>
+  
+          </div>
+        </div>
+
+      </form>
+
+    
+  </div>
+
+
+  <script>
+
+    window.onload = function () {
+      botoes = document.querySelectorAll(".head button");
+
+      for (let botao of botoes) {
+        botao.onclick = () => openTab(botao.dataset.tabname);
+      }
+      openTab("login");
+    }
+
+    function openTab(tabName) {
+      const lastTabActive = document.querySelector(".tabActive");
+      if (lastTabActive !== null) {
+        lastTabActive.classList.remove("tabActive")
+      };
+
+      const lastButtonActive = document.querySelector(".buttonActive");
+      if (lastButtonActive !== null) {
+        lastButtonActive.classList.remove("buttonActive");
+      }
+
+      const query1 = ".form > div[data-tabname='" + tabName + "']";
+      const query2 = ".head button[data-tabname='" + tabName + "']";
+
+      document.querySelector(query1).classList.add("tabActive");
+      document.querySelector(query2).classList.add("buttonActive");
+    }
+
+
+
+  </script>
+
+
+</body>
+
 </html>
