@@ -1,0 +1,21 @@
+main{
+    padding: 0;
+    margin: 0;
+}
+
+#imgContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+img{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+
+    flex: 1;
+    
+}
+
