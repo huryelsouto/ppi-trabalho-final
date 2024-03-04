@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: red;
+    background-color: rgb(255, 255, 255);
 
 }
 header {
@@ -29,11 +29,11 @@ ul {
 a {
     text-decoration: none;
     font-weight: bold;
-    color: black;
+    color: #0056b3;
 
 }
 
 a:hover {
-    color: rgb(95, 21, 212);
+    color: #2e88e7;
 
 }

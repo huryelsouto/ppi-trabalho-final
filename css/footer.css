@@ -5,18 +5,13 @@ body {
     font-size: 10px;
 }
 
-.container {
+footer {
     margin: 0;
     padding: 0;
-    background-color: rgb(79, 174, 197);
-}
-
-footer {
+    background-color: #0056b3;
     color: #fff;
-    height: 150px;   
+    height: 120px;   
     text-align: center;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
