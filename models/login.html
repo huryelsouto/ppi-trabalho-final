@@ -61,27 +61,32 @@
           <input type="date" id="dataNasc" name="dataNasc">
 
           <label for="genero">Gênero:</label>
-          <div class="radio">
-            <div class="generoRadio">
+          <div class="radioOptions">
+            <div class="radioItem">
               <input type="radio" id="feminino" name="genero" value="feminino">
               <label for="feminino">Feminino</label>
             </div>
-            <div class="generoRadio">
+            <div class="radioItem">
               <input type="radio" id="masculino" name="genero" value="masculino">
               <label for="masculino">Masculino</label>
             </div>
-            <div class="generoRadio">
+            <div class="radioItem">
               <input type="radio" id="sem_resp" name="genero" value="sem_resp">
               <label for="sem_resp">Prefiro não dizer</label>
             </div>
           </div>
 
           <label for="estCivil">Estado Cívil:</label>
-          <label for="solteiro">Solteiro</label>
-          <input type="radio" id="solteiro" name="estadoCivil" value="solteiro">
-          <label for="casado">Casado</label>
-          <input type="radio" id="casado" name="estado_civil" value="casado">
-
+          <div class="radioOptions">
+            <div class="radioItem">
+              <input type="radio" id="solteiro" name="estadoCivil" value="solteiro">
+              <label for="solteiro">Solteiro</label>
+            </div>
+            <div class="radioItem">
+              <input type="radio" id="casado" name="estado_civil" value="casado">
+              <label for="casado">Casado</label>
+            </div>
+          </div>  
 
           <label for="password">Senha:</label>
           <input type="password" id="password" name="password">
@@ -89,7 +94,8 @@
 
         <fieldset data-tabname="address">
           <label for="cep">CEP:</label>
-          <input type="text" id="cep" name="cep">
+          <input type="text" id="cep" name="cep" pattern="\d{2}\.\d{3}-\d{3}"
+          placeholder="Ex. 00.000-00">
 
           <label for="logradouro">Tipo de Logradouro: </label>
           <select name="tipo_lograd">

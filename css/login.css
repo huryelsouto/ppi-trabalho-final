@@ -15,7 +15,7 @@ body {
 
 
 .form {
-  width: 35%;
+  width: 45%;
   margin: 55px auto;
   box-sizing: border-box;
   background-color: #fff;
@@ -30,6 +30,7 @@ body {
   margin-bottom: 5px;
 }
 
+select[name="tipo_lograd"],
 .form input[type="date"],
 .form input[type="tel"],
 .form input[type="number"],
@@ -48,6 +49,7 @@ fieldset{
   border: none;
 }
 
+select[name="tipo_lograd"],
 #foto_cadastro{
   margin-bottom: 15px;
   font-family: Arial, sans-serif;
@@ -55,15 +57,33 @@ fieldset{
   color: black;
 }
 
-.generoRadio{
-  display: flex;
-  margin-bottom: 5px;
+.radioItem label,
+input[type="radio"]{
+  margin: 0;
+  padding: 0;
 }
 
-.radio{
+.radioItem{
   display: flex;
-  width: 100%;
+  color: #033870;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
 }
+
+.radioOptions{
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.radioItem input[type="radio"]{
+  width: 15px; /* Tamanho da bolinha */
+  height: 20px; /* Tamanho da bolinha */
+  cursor: pointer;
+  accent-color: #000325;
+}
+
 
 button {
   padding: 10px;
@@ -79,6 +99,7 @@ button {
 button[type="submit"] {
   width: 100%;
 }
+
 
 button:hover {
   background-color: #0056b3;
