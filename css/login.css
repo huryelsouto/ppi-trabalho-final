@@ -4,9 +4,11 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   font-size: 15px;
+  color: #024d9c;
+  font-weight: bold;
 }
 
-.container{
+.container {
   margin: auto;
   width: 100%;
 }
@@ -20,7 +22,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+
 }
 
 .form label {
@@ -28,6 +30,9 @@ body {
   margin-bottom: 5px;
 }
 
+.form input[type="date"],
+.form input[type="tel"],
+.form input[type="number"],
 .form input[type="text"],
 .form input[type="email"],
 .form input[type="password"] {
@@ -39,7 +44,28 @@ body {
   box-sizing: border-box;
 }
 
-button{
+fieldset{
+  border: none;
+}
+
+#foto_cadastro{
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+.generoRadio{
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.radio{
+  display: flex;
+  width: 100%;
+}
+
+button {
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -68,12 +94,12 @@ button:hover {
   color: #0056b3;
 }
 
-.send{
+.send {
   text-align: center;
 }
 
 
-.head{
+.head {
   text-align: center;
   margin-bottom: 22px;
 
@@ -81,24 +107,25 @@ button:hover {
 
 
 .head button[data-tabname='login'],
-.head button[data-tabname='cadastro']{
-  padding: 10px 50px; /* Adicione preenchimento */
+.head button[data-tabname='cadastro'] {
+  padding: 10px 50px;
+  /* Adicione preenchimento */
 }
 
 
-button.buttonActive{
+button.buttonActive {
   font-weight: bold;
   background-color: #0056b3;
 }
 
 
 .container div[data-tabname="cadastro"],
-.container div[data-tabname="login"]{
+.container div[data-tabname="login"] {
   display: none;
 }
 
 div[data-tabname="cadastro"].tabActive,
-div[data-tabname="login"].tabActive{
+div[data-tabname="login"].tabActive {
   display: block;
 }
 
