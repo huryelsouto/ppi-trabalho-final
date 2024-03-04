@@ -30,18 +30,18 @@
           </div>
         </div>
         <div id="menu-itens">
-          <a href="#" class="menu-item" onclick="mostrarConteudo('perfil')">Perfil</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('agendamento-consultas')">Agendamento</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-funcionarios')">Cadastro de
+          <a href="#" class="menu-item" onclick="mostrarConteudo('user-edit-form')">Perfil</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Agendamento</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Cadastro de
             funcionários</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-pacientes')">Cadastro de pacientes</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-funcionarios')">Listagem de
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Cadastro de pacientes</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de
             funcionários</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-pacientes')">Listagem de pacientes</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-enderecos')">Listagem de endereços</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-agendamentos')">Listagem de
+          <a href="#" class="menu-item" onclick="mostrarConteudo('client-table')">Listagem de pacientes</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de endereços</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de
             agendamentos</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('listagem-agendamentos-funcionario')">Listagem de
+          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de
             agendamentos por funcionário</a>
         </div>
         <div class="div-desligar">
@@ -52,10 +52,13 @@
     </div>
 
     <div id="conteudo-container" class="conteudo-container">
+      <iframe id="user-edit-form" class="iframe-component" src="../components/header.html" frameborder="0" width="100%"></iframe>
+      <iframe id="client-table" class="iframe-component visible" src="../components/client-table.html" frameborder="0" width="100%"></iframe>
     </div>
 
   </div>
   <script src="../scripts/usuario.js"></script>
+  <script src="../scripts/cummon-utils.js"></script>
 </body>
 
 </html>

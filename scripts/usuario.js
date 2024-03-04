@@ -1,6 +1,14 @@
-function mostrarConteudo(conteudo) {
-    var conteudoDiv = document.getElementById("conteudo-container");
-    conteudoDiv.innerHTML = "Conteúdo da página " + conteudo;
+
+function mostrarConteudo(id_conteudo) {
+    var iframes = document.querySelectorAll(".iframe-component");
+
+    iframes.forEach(elem => {
+        if (elem.id == id_conteudo) {
+            elem.classList.add("visible");
+        } else {
+            elem.classList.remove("visible");
+        }
+    });
 }
 
 function toggleMenu() {
