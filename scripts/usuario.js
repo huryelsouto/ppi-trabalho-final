@@ -1,3 +1,6 @@
+window.onload = function() {
+    mostrarConteudo("client-table")
+}
 
 function mostrarConteudo(id_conteudo) {
     var iframes = document.querySelectorAll(".iframe-component");
@@ -5,6 +8,7 @@ function mostrarConteudo(id_conteudo) {
     iframes.forEach(elem => {
         if (elem.id == id_conteudo) {
             elem.classList.add("visible");
+            elem.style.height = elem.contentWindow.document.body.scrollHeight + 'px';
         } else {
             elem.classList.remove("visible");
         }
