@@ -54,8 +54,7 @@ html {
 
 /* Estilos para o conteúdo principal */
 .conteudo-container {
-    margin: 0;
-    padding: 0;
+    padding: 15px;
     overflow-y: auto;
     flex: 1;
 }

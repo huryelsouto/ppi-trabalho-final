@@ -4,15 +4,9 @@ body {
     overflow: hidden;
 }
 
-h1 {
-    color: #007bff;
-    text-align: center;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 th, td {
