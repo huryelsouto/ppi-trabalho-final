@@ -1,0 +1,21 @@
+body {
+    padding: 30px 0;
+    background-color: #ffffff;
+    overflow-y: hidden;
+}
+
+.container{
+    width: 80%;
+}
+
+
+select,
+input {
+    margin: 5px 0 25px;
+}
+
+
+button[type="submit"] {
+    width: 30%;
+}
+

@@ -35,17 +35,22 @@ ul {
     list-style: none;
 
     display: flex;
-    justify-content: space-evenly;
     
     align-items: center;
+}
 
+#right-content{
+    justify-content: right;
+}
+
+#left-content{
+    justify-content: space-between;
 }
 
 a {
     text-decoration: none;
     font-weight: bold;
     color: white;
-
 }
 
 a:hover {

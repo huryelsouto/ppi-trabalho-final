@@ -30,13 +30,8 @@ body {
   margin-bottom: 5px;
 }
 
-select[name="tipo_lograd"],
-.form input[type="date"],
-.form input[type="tel"],
-.form input[type="number"],
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"] {
+select,
+input{
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -46,11 +41,18 @@ select[name="tipo_lograd"],
 }
 
 fieldset{
+  padding: 0;
+  margin: 0;
   border: none;
 }
 
-select[name="tipo_lograd"],
+select{
+  font-size: 15px;
+}
+
 #foto_cadastro{
+  padding: 0;
+  border: none;
   margin-bottom: 15px;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -98,6 +100,7 @@ button {
 
 button[type="submit"] {
   width: 100%;
+  box-sizing: border-box;
 }
 
 

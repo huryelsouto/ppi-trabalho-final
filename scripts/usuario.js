@@ -1,5 +1,5 @@
 window.onload = function() {
-    mostrarConteudo("client-table")
+    mostrarConteudo("schedual-fields")
 }
 
 function mostrarConteudo(id_conteudo) {

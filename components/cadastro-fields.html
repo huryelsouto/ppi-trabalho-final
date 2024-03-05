@@ -5,8 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- tag de responsividade -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="../css/cadastro-fields.css">
+  <title>Cadastro Field</title>
+  <link rel="stylesheet" href="../css/general-form-style.css">
+  <link rel="stylesheet" href="../css/register-form-style.css">
 </head>
 
 <body>
@@ -24,9 +25,6 @@
 
       <label for="cpf">CPF:</label>
       <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Ex. 000.000.000-00">
-
-      <label for="idade">Idade:</label>
-      <input type="number" id="idade" name="idade">
 
       <label for="telefone">Telefone:</label>
       <input type="tel" id="telefone" name="telefone" placeholder="Ex. (00) 00000-0000">
@@ -68,7 +66,7 @@
 
     <fieldset>
       <label for="cep">CEP:</label>
-      <input type="text" id="cep" name="cep" pattern="\d{2}\.\d{3}-\d{3}" placeholder="Ex. 00.000-00">
+      <input type="text" id="cep" name="cep" pattern="\d{2}\.\d{3}-\d{3}" placeholder="Ex. 00.000-00" disabled>
 
       <label for="logradouro">Tipo de Logradouro: </label>
       <select name="tipo_lograd">
@@ -94,7 +92,6 @@
 
     <div class="send">
       <button type="submit">Cadastrar</button>
-      <p><a href="index.html">Voltar ao ínicio</a></p>
     </div>
   
   </div> 

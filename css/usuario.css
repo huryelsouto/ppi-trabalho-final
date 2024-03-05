@@ -120,6 +120,7 @@ html {
 
 .iframe-component.visible{
     display: block;
+    min-height: 100%;
 }
 
 .iframe-component{
