@@ -31,15 +31,15 @@
         </div>
         <div id="menu-itens">
           <a href="#" class="menu-item" onclick="mostrarConteudo('user-edit-form')">Perfil</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Agendamento</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Cadastro de
+          <a href="#" class="menu-item" onclick="mostrarConteudo('schedual-fields')">Agendamento</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-fields')">Cadastro de
             funcionários</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Cadastro de pacientes</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-fields')">Cadastro de pacientes</a>
           <a href="#" class="menu-item" onclick="mostrarConteudo('employees-table')">Listagem de
             funcionários</a>
           <a href="#" class="menu-item" onclick="mostrarConteudo('client-table')">Listagem de pacientes</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de endereços</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de
+          <a href="#" class="menu-item" onclick="mostrarConteudo('address-table')">Listagem de endereços</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('schedual-table')">Listagem de
             agendamentos</a>
           <a href="#" class="menu-item" onclick="mostrarConteudo('')">Listagem de
             agendamentos por funcionário</a>
@@ -53,8 +53,12 @@
 
     <div id="conteudo-container" class="conteudo-container">
       <iframe id="user-edit-form" class="iframe-component" src="../components/header.html" frameborder="0" width="100%"></iframe>
+      <iframe id="schedual-fields" class="iframe-component" src="../components/schedual-fields.html" frameborder="0" width="100%"></iframe>
+      <iframe id="cadastro-fields" class="iframe-component visible" src="../components/cadastro-fields.html" frameborder="0" width="100%"></iframe>
       <iframe id="client-table" class="iframe-component visible" src="../components/client-table.html" frameborder="0" width="100%"></iframe>
       <iframe id="employees-table" class="iframe-component visible" src="../components/employees-table.html" frameborder="0" width="100%"></iframe>
+      <iframe id="address-table" class="iframe-component visible" src="../components/address-table.html" frameborder="0" width="100%"></iframe>
+      <iframe id="schedual-table" class="iframe-component visible" src="../components/schedual-table.html" frameborder="0" width="100%"></iframe>
     </div>
 
   </div>
