@@ -59,7 +59,7 @@ html {
 }
 
 /* Estilos para o ícone de sanduíche */
-.sanduiche {
+#sanduiche {
     display: none;
 }
 
@@ -139,12 +139,17 @@ html {
     }
 
 
-    .sanduiche {
+    #sanduiche {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         padding: 10px;
         cursor: pointer;
     }
+
+    #sanduiche.expandido {
+        justify-content: end;
+    }
+
 
     #menu-content {
         display: none;

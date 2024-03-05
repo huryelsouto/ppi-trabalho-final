@@ -16,6 +16,9 @@ function mostrarConteudo(id_conteudo) {
 }
 
 function toggleMenu() {
+    var menu_content = document.getElementById('sanduiche');
+    menu_content.classList.toggle('expandido');
+    
     var menu_content = document.getElementById('menu-content');
     menu_content.classList.toggle('expandido');
 
