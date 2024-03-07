@@ -1,5 +1,5 @@
 window.onload = function() {
-    mostrarConteudo("schedual-fields")
+    mostrarConteudo("perfil-field")
 }
 
 function mostrarConteudo(id_conteudo) {

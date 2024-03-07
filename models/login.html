@@ -11,22 +11,22 @@
 
 <body>
   <div class="container">
-    <form class="form">
+    <form class="form" action="../models/usuario.html">
       <div class="head">
         <button type="button" data-tabname="login">Login</button>
         <button type="button" data-tabname="cadastro">Sign Up</button>
       </div>
 
       <div class="infoLogin" data-tabname="login">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" name="email">
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password">
+        <label for="login-password">Senha:</label>
+        <input type="password" id="login-password" name="password">
 
         <div class="send">
           <button type="submit">Entrar</button>
-          <p><a href="index.html">Voltar ao ínicio</a></p>
+          <p><a href="../models/index.html">Voltar ao ínicio</a></p>
         </div>
       </div>
 
@@ -43,8 +43,8 @@
           <label for="name">Nome Completo:</label>
           <input type="text" id="name" name="name">
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
+          <label for="register-email">Email:</label>
+          <input type="email" id="register-email" name="email">
 
 
           <label for="cpf">CPF:</label>
@@ -57,7 +57,7 @@
           <label for="dataNasc">Data de Nascimento:</label>
           <input type="date" id="dataNasc" name="dataNasc">
 
-          <label for="genero">Gênero:</label>
+          <p>Gênero:</p>
           <div class="radioOptions">
             <div class="radioItem">
               <input type="radio" id="feminino" name="genero" value="feminino">
@@ -73,7 +73,7 @@
             </div>
           </div>
 
-          <label for="estCivil">Estado Cívil:</label>
+          <p>Estado Cívil:</p>
           <div class="radioOptions">
             <div class="radioItem">
               <input type="radio" id="solteiro" name="estadoCivil" value="solteiro">
@@ -85,8 +85,8 @@
             </div>
           </div>  
 
-          <label for="password">Senha:</label>
-          <input type="password" id="password" name="password">
+          <label for="register-password">Senha:</label>
+          <input type="password" id="register-password" name="password">
         </fieldset>
 
         <fieldset data-tabname="address">
@@ -118,7 +118,7 @@
 
         <div class="send">
           <button type="submit">Registrar</button>
-          <p><a href="index.html">Voltar ao ínicio</a></p>
+          <p><a href="../models/index.html">Voltar ao ínicio</a></p>
 
         </div>
       </div>
@@ -137,7 +137,7 @@
       for (let botao of botoes) {
         botao.onclick = () => openTab(botao.dataset.tabname);
       }
-      openTab("cadastro");
+      openTab("login");
     }
 
     function openTab(tabName) {

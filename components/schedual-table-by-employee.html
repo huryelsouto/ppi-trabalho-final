@@ -7,9 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedual table</title>
     <link rel="stylesheet" href="../css/table.css">
+
+    <style>
+        .select-container {
+            position: relative;
+            width: 200px;
+            margin: 25px 0;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .custom-select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            position: absolute;
+            z-index: 1;
+            display: none;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .custom-select.show {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="select-container">
+        <input type="text" class="search-input" placeholder="Pesquisar...">
+        <select id="select-box" class="custom-select" size="5">
+            <option value="1">João Silva</option>
+            <option value="2">Maria Santos</option>
+            <option value="3">Pedro Oliveira</option>
+            <option value="4">Ana Costa</option>
+            <option value="5">Lucas Pereira</option>
+            <option value="6">Carla Almeida</option>
+            <option value="7">Mateus Rocha</option>
+            <option value="8">Juliana Lima</option>
+            <option value="9">Rafael Souza</option>
+            <option value="10">Mariana Ferreira</option>
+        </select>
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -122,6 +170,40 @@
         </tbody>
     </table>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const selectBox = document.getElementById("select-box");
+            const searchInput = document.querySelector(".search-input");
+
+            searchInput.addEventListener("focus", function () {
+                selectBox.classList.add("show");
+            });
+
+            searchInput.addEventListener("blur", function () {
+                selectBox.classList.remove("show");
+            });
+
+            searchInput.addEventListener("input", function () {
+                const filter = searchInput.value.toUpperCase();
+                const options = selectBox.options;
+
+                for (let i = 0; i < options.length; i++) {
+                    const txtValue = options[i].textContent || options[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        options[i].style.display = "";
+                    } else {
+                        options[i].style.display = "none";
+                    }
+                }
+            });
+
+            selectBox.addEventListener("change", function () {
+                searchInput.value = selectBox.options[selectBox.selectedIndex].textContent;
+                selectBox.classList.remove("show");
+            });
+        });
+
+    </script>
 </body>
 
 </html>

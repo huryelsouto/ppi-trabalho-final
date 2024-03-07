@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- tag de responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Field</title>
+  <link rel="stylesheet" href="../css/general-form-style.css">
+  <link rel="stylesheet" href="../css/register-form-style.css">
+</head>
+
+<body>
+  <div class="container">
+    <fieldset id="fieldsetDados">
+      <label for="name">Nome Completo:</label>
+      <input type="text" id="name" name="name" value="Rafael Lima" disabled>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="rafael.lima@gmail.com" disabled>
+
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" value="458.788.258-01" disabled>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" value="Ex. (34) 99785-2378" disabled>
+
+      <label for="dataNasc">Data de Nascimento:</label>
+      <input type="date" id="dataNasc" name="dataNasc" value="2024-03-01" disabled>
+
+      <p>Gênero:</p>
+      <div class="radioOptions">
+        <div class="radioItem">
+          <input type="radio" id="feminino" name="genero" value="feminino" disabled>
+          <label for="feminino">Feminino</label>
+        </div>
+        <div class="radioItem">
+          <input type="radio" id="masculino" name="genero" value="masculino" checked>
+          <label for="masculino">Masculino</label>
+        </div>
+        <div class="radioItem">
+          <input type="radio" id="sem_resp" name="genero" value="sem_resp" disabled>
+          <label for="sem_resp">Prefiro não dizer</label>
+        </div>
+      </div>
+
+      <p>Estado Cívil:</p>
+      <div class="radioOptions">
+        <div class="radioItem">
+          <input type="radio" id="solteiro" name="estCivil" value="solteiro" checked>
+          <label for="solteiro">Solteiro</label>
+        </div>
+        <div class="radioItem">
+          <input type="radio" id="casado" name="estCivil" value="casado">
+          <label for="casado">Casado</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" value="38400-000">
+
+      <label for="logradouro">Tipo de Logradouro: </label>
+      <select name="tipo_lograd">
+        <option value="rua">Rua</option>
+        <option value="avenida">Avenida</option>
+        <option value="praca">Praça</option>
+      </select>
+
+      <label for="logradouro">Logradouro: </label>
+      <input type="text" id="logradouro" name="logradouro" value="Rua das Flores">
+
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" name="bairro" value="Jardim das Rosas">
+
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" name="cidade" value="Uberlandia">
+
+      <label for="estado">Estado:</label>
+      <select name="estado" id="estado" class="form-select">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+    </select>
+    
+
+    </fieldset>
+
+    <div class="send">
+      <button type="submit">Salvar</button>
+    </div>
+  
+  </div> 
+</body>
+</html>
