@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- tag de responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedual field</title>
+  <link rel="stylesheet" href="../css/general-form-style.css">
+  <link rel="stylesheet" href="../css/register-form-style.css">
+
+  <style>
+    .select-container {
+      position: relative;
+      width: 200px;
+      margin: 25px 0;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .custom-select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 5px;
+      position: absolute;
+      z-index: 1;
+      display: none;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .custom-select.show {
+      display: block;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <form id="medico-form">
+      <fieldset>
+        <label for="name">Nome Completo:</label>
+        <select id="select-medico" max-size="10" name="codigo">
+
+        </select>
+        <label for="especialidade">Especialidade: </label>
+        <input type="text" id="especialidade" name="especialidade">
+
+        <label for="crm">CRM: </label>
+        <input type="text" id="crm" name="crm">
+      </fieldset>
+      <div class="send">
+        <button type="submit" id="cadastrar-button">Cadastrar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    async function enviaForm() {
+      document.querySelector('#cadastrar-button').addEventListener('click', function (event) {
+        event.preventDefault(); // Evita o comportamento padrão de submissão do formulário
+
+        const formData = new FormData(document.querySelector('#medico-form')); // Obtém os dados do formulário
+
+        fetch('../scripts/php/cadastra-medico.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            if (!response.ok) {
+              alert('Erro ao enviar dados.');
+            }
+            return response.text();
+          })
+          .then(data => {
+            alert("Médico cadastrado com sucesso");
+          })
+          .catch(error => {
+            alert("Erro ao cadastrar o medicos");
+          });
+      });
+    }
+
+
+    window.onload = function () {
+      // Obtém os dados dos medicos em formato JSON
+      fetch('../scripts/php/obtem-funcionarios.php')
+        .then(response => response.json())
+        .then(data => {
+          const select = document.getElementById('select-medico');
+          data.forEach(medico => {
+            const option = document.createElement('option');
+            option.textContent = medico.Nome;
+            option.value = medico.Codigo;
+            select.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Erro ao obter dados dos medicoss:', error));
+
+      enviaForm();
+    }
+  </script>
+</body>
+
+</html>

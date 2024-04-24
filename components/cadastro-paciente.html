@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- tag de responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Field</title>
+  <link rel="stylesheet" href="../css/general-form-style.css">
+  <link rel="stylesheet" href="../css/register-form-style.css">
+</head>
+
+<body>
+  <div class="container">
+    <form id="funcionario-form">
+      <fieldset id="fieldsetDados">
+        <h2>Dados pessoais</h2>
+        <label for="name">Nome Completo:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="Ex. (00) 00000-0000">
+
+        <p>Gênero:</p>
+        <div class="radioOptions">
+          <div class="radioItem">
+            <input type="radio" id="feminino" name="sexo" value="F">
+            <label for="feminino">Feminino</label>
+          </div>
+          <div class="radioItem">
+            <input type="radio" id="masculino" name="sexo" value="M">
+            <label for="masculino">Masculino</label>
+          </div>
+          <div class="radioItem">
+            <input type="radio" id="sem_resp" name="sexo" value="X">
+            <label for="sem_resp">Prefiro não dizer</label>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" pattern="\d{2}\.\d{3}-\d{3}" placeholder="Ex: 0000000">
+
+        <label for="logradouro">Logradouro: </label>
+        <input type="text" id="logradouro" name="logradouro">
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade">
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado">
+
+      </fieldset>
+
+      <fieldset>
+        <h2>Dados paciente</h2>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" step="0.01" required>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" name="altura" step="0.01" required>
+
+        <label for="tipoSanguineo">Tipo Sanguíneo:</label>
+        <input type="text" id="tipoSanguineo" name="tipoSanguineo" maxlength="5" required>
+
+      </fieldset>
+
+      <div class="send">
+        <button type="submit" id="cadastrar-button">Cadastrar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    async function buscaEndereco(cep) {
+      const cepWithoutHifen = cep.replace("-", '').replace(".", '')
+      if (cep.length != 8) return;
+
+      try {
+        let response = await fetch(`https://viacep.com.br/ws/${cepWithoutHifen}/json/`);
+        if (!response.ok) throw new Error(response.statusText);
+        var endereco = await response.json();
+      }
+      catch (e) {
+        console.error(e);
+        return;
+      }
+
+      document.getElementById('logradouro').value = `${endereco.logradouro} - ${endereco.bairro}`;
+      document.getElementById('cidade').value = endereco.localidade;
+      document.getElementById('estado').value = endereco.uf;
+    }
+
+    async function enviaForm() {
+      document.querySelector('#cadastrar-button').addEventListener('click', function (event) {
+        event.preventDefault(); // Evita o comportamento padrão de submissão do formulário
+
+        const formData = new FormData(document.querySelector('#funcionario-form')); // Obtém os dados do formulário
+
+        fetch('../scripts/php/cadastra-paciente.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            if (!response.ok) {
+              alert('Erro ao enviar dados.');
+            }
+            return response.text();
+          })
+          .then(data => {
+            alert("Paciente cadastrado com sucesso");
+          })
+          .catch(error => {
+            alert("Erro ao cadastrar o paciente");
+          });
+      });
+    }
+
+    window.onload = function () {
+      const inputCep = document.querySelector("#cep");
+      inputCep.onkeyup = () => buscaEndereco(inputCep.value); 2
+
+      enviaForm();
+    }
+
+  </script>
+</body>
+
+</html>

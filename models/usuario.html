@@ -33,18 +33,19 @@
         <div id="menu-itens">
           <a href="#" class="menu-item" onclick="mostrarConteudo('perfil-field')">Perfil</a>
           <a href="#" class="menu-item" onclick="mostrarConteudo('schedual-fields')">Agendamento</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-fields')">Cadastro de
-            funcionários (RESTRITO)</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-fields')">Cadastro de pacientes
-            (RESTRITO)</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-funcionario')">Cadastro de
+            funcionários</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-medico')">Cadastro de
+            médicos</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('cadastro-paciente')">Cadastro de pacientes
+          </a>
           <a href="#" class="menu-item" onclick="mostrarConteudo('employees-table')">Listagem de
-            funcionários (RESTRITO)</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('client-table')">Listagem de pacientes (RESTRITO)</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('address-table')">Listagem de endereços (RESTRITO)</a>
-          <a href="#" class="menu-item" onclick="mostrarConteudo('schedual-table')">Listagem de
-            agendamentos (RESTRITO)</a>
+            funcionários</a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('pacientes-table')">Listagem de pacientes
+          </a>
+          <a href="#" class="menu-item" onclick="mostrarConteudo('address-table')">Listagem de endereços</a>
           <a href="#" class="menu-item" onclick="mostrarConteudo('schedual-table-by-employee')">Listagem de
-            agendamentos por funcionário (RESTRITO)</a>
+            agendamentos por funcionário</a>
         </div>
         <button class="div-desligar" onclick="mudarPagina()">
           <i class=" material-symbols-outlined">power_settings_new</i>
@@ -54,20 +55,21 @@
     </div>
 
     <div id="conteudo-container" class="conteudo-container">
-      <iframe id="perfil-field" class="iframe-component" src="../components/perfil-field.html"
-        width="100"></iframe>
+      <iframe id="perfil-field" class="iframe-component" src="../components/perfil-field.html" width="100"></iframe>
       <iframe id="schedual-fields" class="iframe-component" src="../components/schedual-fields.html"
         width="100"></iframe>
-      <iframe id="cadastro-fields" class="iframe-component" src="../components/cadastro-fields.html"
+      <iframe id="cadastro-medico" class="iframe-component" src="../components/cadastro-medico.html"
         width="100"></iframe>
-      <iframe id="client-table" class="iframe-component" src="../components/client-table.html"
+      <iframe id="cadastro-funcionario" class="iframe-component" src="../components/cadastro-funcionario.html"
+        width="100"></iframe>
+      <iframe id="cadastro-paciente" class="iframe-component" src="../components/cadastro-paciente.html"
+        width="100"></iframe>
+      <iframe id="pacientes-table" class="iframe-component" src="../components/pacientes-table.html"
         width="100"></iframe>
       <iframe id="employees-table" class="iframe-component" src="../components/employees-table.html"
         width="100"></iframe>
-      <iframe id="address-table" class="iframe-component" src="../components/address-table.html"
-        width="100"></iframe>
-      <iframe id="schedual-table" class="iframe-component" src="../components/schedual-table.html"
-        width="100"></iframe>
+      <iframe id="address-table" class="iframe-component" src="../components/address-table.html" width="100"></iframe>
+      <iframe id="schedual-table" class="iframe-component" src="../components/schedual-table.html" width="100"></iframe>
       <iframe id="schedual-table-by-employee" class="iframe-component"
         src="../components/schedual-table-by-employee.html" width="100"></iframe>
 
@@ -75,7 +77,7 @@
     </div>
 
   </div>
-  <script src="../scripts/usuario.js"></script>
+  <script src="../scripts/js/usuario.js"></script>
   <script>
     function mudarPagina() {
       window.location.href = "../index.html";

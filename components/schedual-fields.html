@@ -9,28 +9,81 @@
   <link rel="stylesheet" href="../css/general-form-style.css">
   <link rel="stylesheet" href="../css/register-form-style.css">
 
+  <style>
+    .select-container {
+      position: relative;
+      width: 200px;
+      margin: 25px 0;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .custom-select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 5px;
+      position: absolute;
+      z-index: 1;
+      display: none;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .custom-select.show {
+      display: block;
+    }
+  </style>
+
 </head>
 
 <body>
   <div class="container">
     <label for="name">Nome Completo:</label>
-    <input type="text" id="name" name="name">
+    <select id="select-medico" max-size="10" name="codigo">
 
-    <label for="espAgend">Especialidade:</label>
-    <input type="text" id="espAgend" name="espAgend" placeholder="Escreva qual especialidade da clínica">
+    </select>
+  </div>
 
-    <label for="dataAgend">Data de Agedamento:</label>
-    <input type="date" id="dataAgend" name="dataAgend">
+  <label for="espAgend">Especialidade: </label>
+  <input type="text" id="espAgend" name="espAgend" disabled>
 
-    <label for="timeAgend">Horário de Agedamento:</label>
-    <input type="time" id="timeAgend" name="timeAgend">
+  <label for="dataAgend">Data de Agedamento:</label>
+  <input type="date" id="dataAgend" name="dataAgend">
+
+  <label for="timeAgend">Horário de Agedamento:</label>
+  <input type="time" id="timeAgend" name="timeAgend">
 
 
-    <div class="send">
-      <button type="submit">Agendar</button>
-    </div>
+  <div class="send">
+    <button type="submit">Agendar</button>
+  </div>
 
   </div>
+
+  <script>
+    window.onload = function () {
+      // Obtém os dados dos pacientes em formato JSON
+      fetch('../scripts/php/obtem-funcionarios.php')
+        .then(response => response.json())
+        .then(data => {
+          const select = document.getElementById('select-medico');
+          data.forEach(medico => {
+            const option = document.createElement('option');
+            option.textContent = medico.Nome;
+            option.value = medico.Codigo;
+            select.appendChild(option);
+          });
+        })
+        .catch(error => console.error('Erro ao obter dados dos pacientes:', error));
+    }
+  </script>
 </body>
 
 </html>

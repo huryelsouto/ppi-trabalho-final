@@ -18,21 +18,23 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Sexo</th>
-                <th>Salário</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>Tipo Sanguíneo</th>
             </tr>
         </thead>
-        <tbody id="funcionariosBody">
+        <tbody id="pacientesBody">
             <!-- Aqui serão listados os pacientes -->
         </tbody>
     </table>
     <script>
         window.onload = function () {
             // Obtém os dados dos pacientes em formato JSON
-            fetch('../scripts/php/obtem-funcionarios.php')
+            fetch('../scripts/php/obtem-pacientes.php')
                 .then(response => response.json())
                 .then(data => {
                     // Obtém a referência da tabela e do corpo da tabela
-                    const table = document.getElementById('funcionariosBody');
+                    const table = document.getElementById('pacientesBody');
                     // Itera sobre os dados dos pacientes
                     data.forEach(funcionario => {
                         // Cria uma nova linha na tabela
@@ -44,7 +46,9 @@
                         row.insertCell().textContent = funcionario.Email;
                         row.insertCell().textContent = funcionario.Telefone;
                         row.insertCell().textContent = funcionario.Sexo;
-                        row.insertCell().textContent = funcionario.Salario;
+                        row.insertCell().textContent = funcionario.Peso;
+                        row.insertCell().textContent = funcionario.Altura;
+                        row.insertCell().textContent = funcionario.TipoSanguineo;
                     });
                 })
                 .catch(error => console.error('Erro ao obter dados dos pacientes:', error));
